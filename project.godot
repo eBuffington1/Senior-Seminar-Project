@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Levels/testScene.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerInformation="*res://Scripts/PlayerInformation.cs"
+
 [dotnet]
 
 project/assembly_name="Seminar_Boss_Fight"
