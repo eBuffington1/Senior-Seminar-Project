@@ -10,6 +10,14 @@ public partial class Player : CharacterBody2D
     [Export]
     private int _health = 4;
 
+    [Signal]
+    public delegate void HealthUpdateEventHandler(int health);
+
+
+    public override void _Ready()
+    {
+        ManageHealth(0);
+    }
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
@@ -26,8 +34,9 @@ public partial class Player : CharacterBody2D
         _currentVelocity *= _speed;
     }
 
-    private void ManageHealth()
+    private void ManageHealth(int healthModify)
     {
-        GD.Print("manage health test");
+        _health += healthModify;
+        EmitSignal(SignalName.HealthUpdate, _health);
     }
 }

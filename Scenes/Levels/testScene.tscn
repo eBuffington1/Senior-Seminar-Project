@@ -7,7 +7,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_twcod")]
-position = Vector2(47, 21)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -22,4 +21,5 @@ offset_top = 79.0
 offset_right = 127.0
 offset_bottom = 110.0
 
-[connection signal="pressed" from="CanvasLayer/Button" to="PlayerCharacter" method="ManageHealth"]
+[connection signal="HealthUpdate" from="PlayerCharacter" to="CanvasLayer/PlayerUi" method="_ModifyHealth"]
+[connection signal="pressed" from="CanvasLayer/Button" to="PlayerCharacter" method="ManageHealth" binds= [-1]]

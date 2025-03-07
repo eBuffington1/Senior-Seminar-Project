@@ -7,3 +7,6 @@ func _ready() -> void:
 
 func _DamageTest():
 	print("button test")
+
+func _ModifyHealth(currentHealth: int):
+	get_node("Label").text = "Health: " + str(currentHealth)
