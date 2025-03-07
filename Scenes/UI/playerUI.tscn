@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx8dcs7rx2sir"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="1_iqtje"]
+
+[node name="PlayerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iqtje")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 59.0
+color = Color(0.425072, 0.804455, 0.696824, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 238.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "Test"
+vertical_alignment = 1
