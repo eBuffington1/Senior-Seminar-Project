@@ -3,8 +3,12 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+    [Export]
     private int _speed = 50;
 	private Vector2 _currentVelocity;
+
+    [Export]
+    private int _health = 4;
 
     public override void _PhysicsProcess(double delta)
     {
@@ -20,5 +24,10 @@ public partial class Player : CharacterBody2D
     {
         _currentVelocity = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
         _currentVelocity *= _speed;
+    }
+
+    private void ManageHealth()
+    {
+        GD.Print("manage health test");
     }
 }
