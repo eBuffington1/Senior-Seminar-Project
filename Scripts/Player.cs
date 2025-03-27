@@ -26,6 +26,7 @@ public partial class Player : CharacterBody2D
 
         Velocity = _currentVelocity;
         MoveAndSlide();
+
     }
 
     private void HandleInput()
@@ -38,5 +39,10 @@ public partial class Player : CharacterBody2D
     {
         _health += healthModify;
         EmitSignal(SignalName.HealthUpdate, _health);
+    }
+
+    public void HitHostile (int damage)
+    {
+        ManageHealth(damage);
     }
 }
