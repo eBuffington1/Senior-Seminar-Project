@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://djur6qak7wdy0"]
+[gd_scene load_steps=4 format=3 uid="uid://djur6qak7wdy0"]
 
 [ext_resource type="Texture2D" uid="uid://bxtuasrf0q2n2" path="res://Sprites/Test Projectile.png" id="1_ph3v7"]
+[ext_resource type="Script" path="res://Scripts/TestProjectile.cs" id="2_5um0u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy4qc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y764l"]
 size = Vector2(32, 32)
 
-[node name="TestProjectile" type="Area2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TestProjectile" type="Sprite2D"]
 texture = ExtResource("1_ph3v7")
+script = ExtResource("2_5um0u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hy4qc")
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_y764l")
+
+[connection signal="area_entered" from="Hitbox" to="." method="OnAreaEntered"]
+[connection signal="body_entered" from="Hitbox" to="." method="OnBodyEntered"]

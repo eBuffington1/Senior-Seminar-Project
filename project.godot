@@ -18,3 +18,13 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="Seminar_Boss_Fight"
+
+[global_group]
+
+Player="The player-controlled character"
+
+[layer_names]
+
+2d_physics/layer_1="WALLS"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
