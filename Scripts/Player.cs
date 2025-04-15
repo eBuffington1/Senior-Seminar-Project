@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-    private CharacterBody2D _characterBody;
+    private Area2D _hurtBox;
 
     [Export]
     private int _speed = 400;
@@ -25,7 +25,7 @@ public partial class Player : CharacterBody2D
     {
         ManageHealth(0);
 
-        _characterBody = GetNode<CharacterBody2D>("PlayerCharacter");
+        _hurtBox = GetNode<Area2D>("HurtBox");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -33,13 +33,11 @@ public partial class Player : CharacterBody2D
 
         HandleInput();
 
+        // MOVEMENT
         Velocity = _currentVelocity;
         MoveAndSlide();
 
-    }
-
-    public override void _Process(double delta)
-    {
+        // TICK DOWN INVULN TIMER
         if (_isInvul)
         {
             // Count down invuln timer
@@ -53,8 +51,22 @@ public partial class Player : CharacterBody2D
             }
         }
 
-        //_characterBody.Get
+        // CHECK IF OVERLAPPING HOSTILE
+        // Since area2D only detects projectiles, just need to see if greater than 0
+        if (_hurtBox.GetOverlappingAreas().Count > 0)
+        {
+            HitHostile();
+        }
+
     }
+
+    void OnAreaEntered(Area2D area)
+    {
+        GD.Print("collision area test: " + area.Name);
+        //HitHostile();
+
+    }
+
 
     private void HandleInput()
     {
@@ -68,7 +80,7 @@ public partial class Player : CharacterBody2D
         EmitSignal(SignalName.HealthUpdate, _health);
     }
 
-    public void HitHostile (int damage)
+    public void HitHostile (int damage = -1)
     {
         // If not invincible, deal damage and activate invuln
         if (!_isInvul)

@@ -16,5 +16,14 @@ script = ExtResource("1_n3d3v")
 texture_filter = 1
 texture = ExtResource("2_bi8gh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="characterBodyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lg3le")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="squarecollision" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_lg3le")
+
+[connection signal="area_entered" from="HurtBox" to="." method="OnAreaEntered"]

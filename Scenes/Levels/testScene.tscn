@@ -105,7 +105,7 @@ offset_right = 127.0
 offset_bottom = 110.0
 
 [node name="TestProjectile" parent="." instance=ExtResource("4_4qphe")]
-position = Vector2(247, 152)
+position = Vector2(307, 179)
 
 [node name="testAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
