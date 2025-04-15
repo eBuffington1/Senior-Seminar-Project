@@ -1,15 +1,95 @@
-[gd_scene load_steps=5 format=3 uid="uid://qsro0oqiub1x"]
+[gd_scene load_steps=8 format=3 uid="uid://qsro0oqiub1x"]
 
 [ext_resource type="PackedScene" uid="uid://ci814gqlwq5y7" path="res://Scenes/Prefab/Player.tscn" id="1_twcod"]
 [ext_resource type="PackedScene" uid="uid://cx8dcs7rx2sir" path="res://Scenes/UI/playerUI.tscn" id="2_4gl7e"]
 [ext_resource type="PackedScene" uid="uid://dpna88tsxt7l7" path="res://Scenes/UI/dmgTestButton.tscn" id="3_pissg"]
 [ext_resource type="PackedScene" uid="uid://djur6qak7wdy0" path="res://Scenes/Prefab/TestProjectile.tscn" id="4_4qphe"]
 
+[sub_resource type="Animation" id="Animation_hm8kw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("testAnimationPlayer/TestProjectile:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(670, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("testAnimationPlayer/TestProjectile:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(267, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("testAnimationPlayer/TestProjectile:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xkbrn"]
+resource_name = "projectileTest"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("testAnimationPlayer/TestProjectile:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(670, -0.25, 0, 0.25, 0, 670, -0.25, 0, 0.25, 0, 670, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("testAnimationPlayer/TestProjectile:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(267, -0.25, 0, 1.06746, -9.08743, 53, -0.568043, 6.68769, 0.9, 28.7127, 267, -0.9, 12.9375, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("testAnimationPlayer/TestProjectile:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_up5wi"]
+_data = {
+"RESET": SubResource("Animation_hm8kw"),
+"projectileTest": SubResource("Animation_xkbrn")
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_twcod")]
 position = Vector2(171, 193)
-_speed = 400
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -26,6 +106,15 @@ offset_bottom = 110.0
 
 [node name="TestProjectile" parent="." instance=ExtResource("4_4qphe")]
 position = Vector2(247, 152)
+
+[node name="testAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_up5wi")
+}
+autoplay = "projectileTest"
+
+[node name="TestProjectile" parent="testAnimationPlayer" instance=ExtResource("4_4qphe")]
+position = Vector2(670, 267)
 
 [connection signal="HealthUpdate" from="PlayerCharacter" to="CanvasLayer/PlayerUi" method="_ModifyHealth"]
 [connection signal="pressed" from="CanvasLayer/Button" to="PlayerCharacter" method="ManageHealth" binds= [-1]]

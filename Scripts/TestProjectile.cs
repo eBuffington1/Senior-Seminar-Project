@@ -4,6 +4,7 @@ using System;
 public partial class TestProjectile : Sprite2D
 {
 	private Node2D _player;
+	private Area2D _hitBox;
 
 	[Export]
 	private int _dealtDamage = -1;
@@ -13,6 +14,7 @@ public partial class TestProjectile : Sprite2D
 
     public override void _Ready()
 	{
+		_hitBox = GetNode<Area2D>("Hitbox");
 
 	}
 
@@ -21,7 +23,7 @@ public partial class TestProjectile : Sprite2D
 		//GD.Print("collision area test");
 	}
 
-	void OnBodyEntered(Node2D body)
+	async void OnBodyEntered(Node2D body)
 	{
 		//GD.Print("collision body test");
 
