@@ -10,6 +10,13 @@ public partial class Player : CharacterBody2D
 	private Vector2 _currentVelocity;
 
     [Export]
+    private int _dashSpeed = 800;
+    [Export]
+    private double _dashMaxTime = 0.5;
+    private double _dashTime = 0;
+    private bool _isDashing = true;
+
+    [Export]
     private int _health = 4;
 
     [Export]
@@ -49,6 +56,20 @@ public partial class Player : CharacterBody2D
             }
         }
 
+        // TICK DOWN DASH TIMER
+        if (_isDashing)
+        {
+            // Count down dash timer
+            _dashTime -= delta;
+
+            // If dash timer is less than or equal to zero, reset invuln state
+            if (_dashTime <= 0)
+            {
+                _isDashing = false;
+                _dashTime = _dashMaxTime;
+            }
+        }
+
         // CHECK IF OVERLAPPING HOSTILE
         // Since area2D only detects projectiles, just need to see if greater than 0
         if (_hurtBox.GetOverlappingAreas().Count > 0)
@@ -57,6 +78,8 @@ public partial class Player : CharacterBody2D
         }
 
         // MOVEMENT
+        
+        
         Velocity = _currentVelocity;
         MoveAndSlide();
     }
@@ -68,11 +91,34 @@ public partial class Player : CharacterBody2D
 
     }
 
+    // INPUT EVENTS
+    public override void _Input(InputEvent @event)
+    {
+        // DASH
+        if (@event.IsActionPressed("Dash"))
+        {
+            _isDashing = true;
+            _isInvul = true;
+            _dashTime = _dashMaxTime;
+            _invulTime = _dashMaxTime;
+        }
+    }
+
 
     private void HandleInput()
     {
         _currentVelocity = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-        _currentVelocity *= _speed;
+        
+        // Set speed based on if dashing or not
+        if (_isDashing)
+        {
+            _currentVelocity *= _dashSpeed;
+        }
+        else
+        {
+            _currentVelocity *= _speed;
+        }
+        
     }
 
     private void ManageHealth(int healthModify)
