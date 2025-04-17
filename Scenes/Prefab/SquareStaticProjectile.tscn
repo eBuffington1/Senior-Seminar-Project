@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ipkw3axwttk"]
+
+[ext_resource type="Texture2D" uid="uid://bxtuasrf0q2n2" path="res://Sprites/Test Projectile.png" id="1_8etaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y764l"]
+size = Vector2(32, 32)
+
+[node name="SquareProjectile" type="Sprite2D"]
+texture = ExtResource("1_8etaw")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_y764l")

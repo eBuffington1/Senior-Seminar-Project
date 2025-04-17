@@ -36,3 +36,7 @@ Dash={
 2d_physics/layer_1="WALLS"
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

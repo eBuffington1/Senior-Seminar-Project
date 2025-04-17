@@ -1,6 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx8dcs7rx2sir"]
+[gd_scene load_steps=6 format=3 uid="uid://cx8dcs7rx2sir"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerHUD.gd" id="1_iqtje"]
+
+[sub_resource type="Animation" id="Animation_fv0cd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dvflu"]
+_data = {
+"RESET": SubResource("Animation_fv0cd")
+}
+
+[sub_resource type="Animation" id="Animation_56ocf"]
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(5, -0.15, 0, 0.15, 0, 5, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-66, -0.15, 0, 0.1, 57.5, -4, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3wko"]
+_data = {
+"HPSlidesIn": SubResource("Animation_56ocf")
+}
 
 [node name="PlayerUi" type="Control"]
 layout_mode = 3
@@ -12,6 +72,7 @@ grow_vertical = 2
 script = ExtResource("1_iqtje")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 59.0
@@ -20,10 +81,17 @@ color = Color(0.425072, 0.804455, 0.696824, 1)
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 5.0
-offset_top = -4.0
+offset_top = -74.0
 offset_right = 238.0
-offset_bottom = 60.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 46
-text = "Test"
+text = "hp#
+"
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dvflu"),
+"PlayerUI": SubResource("AnimationLibrary_p3wko")
+}

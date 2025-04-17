@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|c:\\users\\zatit\\desktop\\gotod projects\\senior-seminar-project\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|c:\\users\\zatit\\desktop\\gotod projects\\senior-seminar-project\\scripts\\mainlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|solutionrelative:scripts\\mainlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|c:\\users\\zatit\\desktop\\gotod projects\\senior-seminar-project\\scripts\\testprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|solutionrelative:scripts\\testprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|c:\\users\\zatit\\desktop\\gotod projects\\senior-seminar-project\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0342967-4252-4C21-B7EB-9706AB33B33E}|Seminar_Boss_Fight.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainLevel.cs",
+              "DocumentMoniker": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\Scripts\\MainLevel.cs",
+              "RelativeDocumentMoniker": "Scripts\\MainLevel.cs",
+              "ToolTip": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\Scripts\\MainLevel.cs",
+              "RelativeToolTip": "Scripts\\MainLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T18:30:11.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player.cs",
               "ToolTip": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\Scripts\\Player.cs",
               "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAYwGQAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T05:00:30.857Z",
               "EditorCaption": ""
@@ -41,9 +58,10 @@
               "RelativeDocumentMoniker": "Scripts\\TestProjectile.cs",
               "ToolTip": "C:\\Users\\zatit\\Desktop\\Gotod Projects\\Senior-Seminar-Project\\Scripts\\TestProjectile.cs",
               "RelativeToolTip": "Scripts\\TestProjectile.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwCoAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T18:21:42.533Z"
+              "WhenOpened": "2025-04-08T18:21:42.533Z",
+              "EditorCaption": ""
             }
           ]
         }

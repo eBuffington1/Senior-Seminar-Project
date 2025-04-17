@@ -10,3 +10,6 @@ func _DamageTest():
 
 func _ModifyHealth(currentHealth: int):
 	get_node("Label").text = "Health: " + str(currentHealth)
+
+func _slideInHealth():
+	$AnimationPlayer.play("PlayerUI/HPSlidesIn")

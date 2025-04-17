@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmj2rspdykc22"]
+[gd_scene load_steps=12 format=3 uid="uid://bmj2rspdykc22"]
 
 [ext_resource type="PackedScene" uid="uid://ci814gqlwq5y7" path="res://Scenes/Prefab/Player.tscn" id="1_6p6x6"]
+[ext_resource type="Script" path="res://Scripts/MainLevel.cs" id="1_dwcwg"]
 [ext_resource type="PackedScene" uid="uid://cx8dcs7rx2sir" path="res://Scenes/UI/playerUI.tscn" id="1_sm0ki"]
-[ext_resource type="PackedScene" uid="uid://djur6qak7wdy0" path="res://Scenes/Prefab/TestProjectile.tscn" id="2_n2bpk"]
+[ext_resource type="Texture2D" uid="uid://bow6j56sje3y2" path="res://Sprites/WhiteBox.png" id="3_ycg2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_873uk"]
 size = Vector2(1226, 20)
@@ -10,11 +11,153 @@ size = Vector2(1226, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2syy"]
 size = Vector2(20, 675)
 
-[node name="MainLevel" type="Node2D"]
+[sub_resource type="Animation" id="Animation_a577w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartBox/Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.526418, 0.957319, 0.562326, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.4, 350.72)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control Instructions:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(82, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control Instructions:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(172, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ajmk4"]
+_data = {
+"RESET": SubResource("Animation_a577w")
+}
+
+[sub_resource type="Animation" id="Animation_abjde"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartBox/Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.526418, 0.957319, 0.562326, 1), Color(0.52549, 0.956863, 0.560784, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6.4, 350.72), Vector2(1e-05, 350.72)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"phase01"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerUi")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_slideInHealth"
+}]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control Instructions:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(82, -0.15, 0, 0.15, 0, -222, -0.133333, 278.025, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control Instructions:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(172, -0.15, 0, 0.15, 0, 172, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugd4j"]
+_data = {
+"SetupZone": SubResource("Animation_abjde")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0ec2"]
+size = Vector2(2.03125, 20)
+
+[node name="MainLevel" type="Node2D" node_paths=PackedStringArray("animPlayer")]
+script = ExtResource("1_dwcwg")
+animPlayer = NodePath("AnimationPlayer")
 
 [node name="Boundaries" type="Node" parent="."]
 
 [node name="Wall North" type="StaticBody2D" parent="Boundaries"]
+visible = false
 position = Vector2(576, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall North"]
@@ -22,6 +165,7 @@ position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_873uk")
 
 [node name="Wall South" type="StaticBody2D" parent="Boundaries"]
+visible = false
 position = Vector2(576, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall South"]
@@ -29,6 +173,7 @@ position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_873uk")
 
 [node name="Wall West" type="StaticBody2D" parent="Boundaries"]
+visible = false
 position = Vector2(-10, 322)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall West"]
@@ -36,11 +181,22 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_c2syy")
 
 [node name="Wall East" type="StaticBody2D" parent="Boundaries"]
+visible = false
 position = Vector2(1162, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall East"]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_c2syy")
+
+[node name="Boss Attacks" type="Node" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ajmk4"),
+"Phases": SubResource("AnimationLibrary_ugd4j")
+}
 
 [node name="PlayerUi" parent="." instance=ExtResource("1_sm0ki")]
 
@@ -48,13 +204,39 @@ shape = SubResource("RectangleShape2D_c2syy")
 anchor_mode = 0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_6p6x6")]
-position = Vector2(540, 226)
+position = Vector2(315, 312)
 _dashSpeed = 1200
 _dashMaxTime = 0.1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="StartBox" type="Node2D" parent="."]
+position = Vector2(535, 328)
+scale = Vector2(6.4, 350.72)
 
-[node name="TestProjectile" parent="." instance=ExtResource("2_n2bpk")]
-position = Vector2(84, 121)
+[node name="Sprite2D" type="Sprite2D" parent="StartBox"]
+modulate = Color(0.526418, 0.957319, 0.562326, 1)
+z_index = -10
+texture = ExtResource("3_ycg2f")
+
+[node name="Area2D" type="Area2D" parent="StartBox"]
+z_index = -1
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartBox/Area2D"]
+visible = false
+position = Vector2(-0.078125, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_c0ec2")
+
+[node name="Control Instructions" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 172.0
+offset_right = 294.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 26
+text = "Press arrow keys
+to move"
+horizontal_alignment = 1
 
 [connection signal="HealthUpdate" from="PlayerCharacter" to="PlayerUi" method="_ModifyHealth"]
+[connection signal="body_entered" from="StartBox/Area2D" to="." method="StartFight"]
