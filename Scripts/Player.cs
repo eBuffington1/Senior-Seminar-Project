@@ -15,7 +15,7 @@ public partial class Player : CharacterBody2D
     [Export]
     private double _invulMaxTime = 1;
     private double _invulTime = 0;
-    private bool _isInvul = false;
+    private bool _isInvul = true;
 
     [Signal]
     public delegate void HealthUpdateEventHandler(int health);
@@ -33,9 +33,7 @@ public partial class Player : CharacterBody2D
 
         HandleInput();
 
-        // MOVEMENT
-        Velocity = _currentVelocity;
-        MoveAndSlide();
+        
 
         // TICK DOWN INVULN TIMER
         if (_isInvul)
@@ -58,11 +56,14 @@ public partial class Player : CharacterBody2D
             HitHostile();
         }
 
+        // MOVEMENT
+        Velocity = _currentVelocity;
+        MoveAndSlide();
     }
 
     void OnAreaEntered(Area2D area)
     {
-        GD.Print("collision area test: " + area.Name);
+        //GD.Print("collision area test: " + area.Name);
         //HitHostile();
 
     }
@@ -85,8 +86,9 @@ public partial class Player : CharacterBody2D
         // If not invincible, deal damage and activate invuln
         if (!_isInvul)
         {
-            ManageHealth(damage);
+            GD.Print("Hit a hostile enemy");
             _isInvul = true;
+            ManageHealth(damage);
         }
         
         

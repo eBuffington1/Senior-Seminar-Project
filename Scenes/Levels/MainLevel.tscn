@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmj2rspdykc22"]
+
+[ext_resource type="PackedScene" uid="uid://ci814gqlwq5y7" path="res://Scenes/Prefab/Player.tscn" id="1_6p6x6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_873uk"]
+size = Vector2(1226, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2syy"]
+size = Vector2(20, 675)
+
+[node name="MainLevel" type="Node2D"]
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Wall North" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, -334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall North"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_873uk")
+
+[node name="Wall South" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, 334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall South"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_873uk")
+
+[node name="Wall West" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(-586, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall West"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_c2syy")
+
+[node name="Wall East" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(586, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Wall East"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_c2syy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_6p6x6")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
