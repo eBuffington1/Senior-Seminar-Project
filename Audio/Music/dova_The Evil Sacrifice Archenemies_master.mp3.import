@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drbycb50stdig"
+path="res://.godot/imported/dova_The Evil Sacrifice Archenemies_master.mp3-e9c4339075a66516f49b66880af81a57.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/dova_The Evil Sacrifice Archenemies_master.mp3"
+dest_files=["res://.godot/imported/dova_The Evil Sacrifice Archenemies_master.mp3-e9c4339075a66516f49b66880af81a57.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

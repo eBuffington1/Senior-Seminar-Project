@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://6sb3rh72gotm"]
+
+[ext_resource type="PackedScene" uid="uid://8ipkw3axwttk" path="res://Scenes/Prefab/SquareStaticProjectile.tscn" id="1_7x2vx"]
+
+[sub_resource type="Animation" id="Animation_jmkeb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollingBoxes:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollingBoxes:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0j0xq"]
+resource_name = "phase01"
+length = 30.0
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollingBoxes:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5967, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6.1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollingBoxes:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6.1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dkn6v"]
+_data = {
+"RESET": SubResource("Animation_jmkeb"),
+"phase01": SubResource("Animation_0j0xq")
+}
+
+[node name="Phase01" type="Node"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dkn6v")
+}
+autoplay = "phase01"
+
+[node name="ScrollingBoxes" type="Node2D" parent="."]
+
+[node name="botBox" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
+position = Vector2(1901, 1014)
+scale = Vector2(10.45, 500)
+
+[node name="botBox2" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
+position = Vector2(2721, 884)
+scale = Vector2(10.45, 500)
+
+[node name="topBox" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
+position = Vector2(2157, -402)
+scale = Vector2(10.45, 500)
+
+[node name="topBox2" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
+position = Vector2(3212, -258)
+scale = Vector2(10.45, 500)
