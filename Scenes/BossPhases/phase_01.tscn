@@ -1,29 +1,74 @@
-[gd_scene load_steps=5 format=3 uid="uid://6sb3rh72gotm"]
-
-[ext_resource type="PackedScene" uid="uid://8ipkw3axwttk" path="res://Scenes/Prefab/SquareStaticProjectile.tscn" id="1_7x2vx"]
+[gd_scene load_steps=4 format=3 uid="uid://6sb3rh72gotm"]
 
 [sub_resource type="Animation" id="Animation_jmkeb"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ScrollingBoxes:position:x")
+tracks/0/path = NodePath("DashTip3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1154, 355)]
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ScrollingBoxes:position:y")
+tracks/1/path = NodePath("DashTip1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1154, 237)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DashTip2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1157, 296)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DashTip1:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1154, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DashTip3:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1154, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DashTip2:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1157, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -34,24 +79,35 @@ step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ScrollingBoxes:position:x")
+tracks/0/path = NodePath("DashTip1:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5967, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 6.1)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1155, -0.25, 0, 0.194737, -400.202, 643, -0.285518, 52.9444, 0.214482, -34.7742, 576, -0.247473, 15.0569, 0.282717, -33.1022, -310, -0.317282, 631.366, 0.25, 0),
+"times": PackedFloat32Array(4, 4.7, 6.3, 7)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ScrollingBoxes:position:y")
+tracks/1/path = NodePath("DashTip2:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 6.1)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1155, -0.25, 0, 0.194737, -400.202, 643, -0.285518, 52.9444, 0.214482, -34.7742, 576, -0.247473, 15.0569, 0.282717, -33.1022, -310, -0.317282, 631.366, 0.25, 0),
+"times": PackedFloat32Array(4.2, 4.9, 6.5, 7.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DashTip3:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1155, -0.25, 0, 0.194737, -400.202, 643, -0.285518, 52.9444, 0.214482, -34.7742, 576, -0.247473, 15.0569, 0.282717, -33.1022, -310, -0.317282, 631.366, 0.25, 0),
+"times": PackedFloat32Array(4.4, 5.1, 6.7, 7.4)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dkn6v"]
@@ -61,6 +117,7 @@ _data = {
 }
 
 [node name="Phase01" type="Node"]
+metadata/_edit_horizontal_guides_ = [-334.0]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -68,20 +125,26 @@ libraries = {
 }
 autoplay = "phase01"
 
-[node name="ScrollingBoxes" type="Node2D" parent="."]
+[node name="DashTip1" type="Label" parent="."]
+offset_left = 1154.0
+offset_top = 237.0
+offset_right = 1451.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'Space' to"
 
-[node name="botBox" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
-position = Vector2(1901, 1014)
-scale = Vector2(10.45, 500)
+[node name="DashTip2" type="Label" parent="."]
+offset_left = 1157.0
+offset_top = 296.0
+offset_right = 1454.0
+offset_bottom = 351.0
+theme_override_font_sizes/font_size = 40
+text = "dash through"
 
-[node name="botBox2" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
-position = Vector2(2721, 884)
-scale = Vector2(10.45, 500)
-
-[node name="topBox" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
-position = Vector2(2157, -402)
-scale = Vector2(10.45, 500)
-
-[node name="topBox2" parent="ScrollingBoxes" instance=ExtResource("1_7x2vx")]
-position = Vector2(3212, -258)
-scale = Vector2(10.45, 500)
+[node name="DashTip3" type="Label" parent="."]
+offset_left = 1154.0
+offset_top = 355.0
+offset_right = 1451.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 40
+text = "obstacles!"

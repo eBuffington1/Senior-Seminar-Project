@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://bguv2xaeyfyb7"]
+
+[ext_resource type="Script" path="res://Scripts/main_Menu.gd" id="1_lwfth"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_lwfth")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="txt_Capstone2025" type="Label" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_top = 50.0
+offset_right = 127.5
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Capstone 2025"
+horizontal_alignment = 1
+
+[node name="txt_Title" type="Label" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_top = 110.0
+offset_right = 127.5
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "A Simple Boss Fight"
+horizontal_alignment = 1
+
+[node name="but_Play" type="Button" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 275.0
+offset_right = 55.5
+offset_bottom = 353.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "Play"
+
+[node name="but_Exit" type="Button" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 366.0
+offset_right = 55.5
+offset_bottom = 444.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "Exit"
+
+[node name="txt_Song Credit" type="Label" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "The Evil Sacrifice Archenemies
+SOUND AIRYLUVS by ISAo https://airyluvs.com/"
+
+[node name="txt_My Credit" type="Label" parent="UI Main"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Project by Ethan Buffington"
+
+[connection signal="pressed" from="UI Main/but_Play" to="." method="_StartGame"]
+[connection signal="pressed" from="UI Main/but_Exit" to="." method="_ExitGame"]
