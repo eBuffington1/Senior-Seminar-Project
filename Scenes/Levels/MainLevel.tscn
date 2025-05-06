@@ -242,6 +242,7 @@ shape = SubResource("RectangleShape2D_c2syy")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6iaqf")
+volume_db = -15.0
 
 [node name="bossTimelinePlayer" type="AnimationPlayer" parent="."]
 libraries = {

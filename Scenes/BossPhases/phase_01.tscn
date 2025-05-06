@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://6sb3rh72gotm"]
+[gd_scene load_steps=5 format=3 uid="uid://bsx6053c608n5"]
+
+[ext_resource type="PackedScene" uid="uid://8ipkw3axwttk" path="res://Scenes/Prefab/SquareStaticProjectile.tscn" id="1_3bf0c"]
 
 [sub_resource type="Animation" id="Animation_jmkeb"]
 length = 0.001
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,10 +74,142 @@ tracks/5/keys = {
 "points": PackedFloat32Array(1157, -0.0005, 0, 0.0005, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("botBox1:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("botBox1:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("topBox1:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("topBox1:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("botBox2:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("botBox2:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("topBox2:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("topBox2:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("topBox3:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("topBox3:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("botBox3:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("botBox3:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_0j0xq"]
 resource_name = "phase01"
-length = 30.0
+length = 8.5
 step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -109,6 +244,138 @@ tracks/2/keys = {
 "points": PackedFloat32Array(1155, -0.25, 0, 0.194737, -400.202, 643, -0.285518, 52.9444, 0.214482, -34.7742, 576, -0.247473, 15.0569, 0.282717, -33.1022, -310, -0.317282, 631.366, 0.25, 0),
 "times": PackedFloat32Array(4.4, 5.1, 6.7, 7.4)
 }
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("botBox1:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0, 1134.11, -0.25, 0, 0.25, 0, -16, -0.2, 1081.47, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("botBox1:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0, 849, -0.25, 0, 0.25, 0, 849, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("topBox1:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0, 1134, -0.25, 0, 0.25, 0, -19, -0.2, 1085.46, 0.25, 0),
+"times": PackedFloat32Array(0.9, 1.4, 2.7)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("topBox1:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0, -185, -0.25, 0, 0.25, 0, -185, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.9, 1.4, 2.7)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("botBox2:position:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0, 1134.11, -0.25, 0, 0.25, 0, -16, -0.2, 1081.47, 0.25, 0),
+"times": PackedFloat32Array(2.5, 3, 4.3)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("botBox2:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0, 849, -0.25, 0, 0.25, 0, 849, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.5, 3, 4.3)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("topBox2:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0, 1134, -0.25, 0, 0.25, 0, -19, -0.2, 1085.46, 0.25, 0),
+"times": PackedFloat32Array(4, 4.5, 5.8)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("topBox2:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0, -185, -0.25, 0, 0.25, 0, -185, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 4.5, 5.8)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("topBox3:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1134, -0.25, 0, 0.25, 0, 1134, -0.25, 0, 0.25, 0, 1134, -0.25, 0, 1.09599, -15.4436, -19.8901, -0.0999999, 392.945, 0.25, 0),
+"times": PackedFloat32Array(5.8, 6.3, 6.9, 8.4)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("topBox3:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-388, -0.25, 0, 0.25, 0, -3, -0.25, 0, 0.25, 0, -3, -0.25, 0, 0.25, 0, -3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(5.8, 6.3, 6.9, 8.4)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("botBox3:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1134.11, -0.25, 0, 0.25, 0, 1134.11, -0.25, 0, 0.25, 0, 1134, -0.25, 0, 1.09599, -15.4436, -19.8901, -0.0999999, 392.945, 0.25, 0),
+"times": PackedFloat32Array(5.8, 6.3, 6.9, 8.4)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("botBox3:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(5.8, 6.3, 6.9, 8.4)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dkn6v"]
 _data = {
@@ -117,7 +384,6 @@ _data = {
 }
 
 [node name="Phase01" type="Node"]
-metadata/_edit_horizontal_guides_ = [-334.0]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -148,3 +414,33 @@ offset_right = 1451.0
 offset_bottom = 410.0
 theme_override_font_sizes/font_size = 40
 text = "obstacles!"
+
+[node name="botBox1" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134.11, 1034.55)
+scale = Vector2(10.1099, 379.45)
+
+[node name="botBox2" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134.11, 1034.55)
+scale = Vector2(10.1099, 379.45)
+
+[node name="botBox3" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134.11, 1034.55)
+scale = Vector2(10.1099, 379.45)
+
+[node name="topBox1" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134, -388)
+scale = Vector2(10.1099, 379.45)
+
+[node name="topBox2" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134, -388)
+scale = Vector2(10.1099, 379.45)
+
+[node name="topBox3" parent="." instance=ExtResource("1_3bf0c")]
+self_modulate = Color(1, 0.944167, 0.33, 1)
+position = Vector2(1134, -388)
+scale = Vector2(10.1099, 379.45)
