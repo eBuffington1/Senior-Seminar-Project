@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsx6053c608n5"]
+[gd_scene load_steps=6 format=3 uid="uid://bsx6053c608n5"]
 
 [ext_resource type="PackedScene" uid="uid://8ipkw3axwttk" path="res://Scenes/Prefab/SquareStaticProjectile.tscn" id="1_3bf0c"]
+[ext_resource type="Script" path="res://Scripts/phase_01.gd" id="1_dwugl"]
 
 [sub_resource type="Animation" id="Animation_jmkeb"]
 length = 0.001
@@ -376,6 +377,20 @@ tracks/14/keys = {
 "points": PackedFloat32Array(1034.55, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0, 645, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(5.8, 6.3, 6.9, 8.4)
 }
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(8.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"endPhase"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dkn6v"]
 _data = {
@@ -384,6 +399,7 @@ _data = {
 }
 
 [node name="Phase01" type="Node"]
+script = ExtResource("1_dwugl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -392,25 +408,25 @@ libraries = {
 autoplay = "phase01"
 
 [node name="DashTip1" type="Label" parent="."]
-offset_left = 1154.0
+offset_left = 1155.0
 offset_top = 237.0
-offset_right = 1451.0
+offset_right = 1452.0
 offset_bottom = 292.0
 theme_override_font_sizes/font_size = 40
 text = "Press 'Space' to"
 
 [node name="DashTip2" type="Label" parent="."]
-offset_left = 1157.0
+offset_left = 1155.0
 offset_top = 296.0
-offset_right = 1454.0
+offset_right = 1452.0
 offset_bottom = 351.0
 theme_override_font_sizes/font_size = 40
 text = "dash through"
 
 [node name="DashTip3" type="Label" parent="."]
-offset_left = 1154.0
+offset_left = 1155.0
 offset_top = 355.0
-offset_right = 1451.0
+offset_right = 1452.0
 offset_bottom = 410.0
 theme_override_font_sizes/font_size = 40
 text = "obstacles!"

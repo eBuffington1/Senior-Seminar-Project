@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgwhfhe241s5w"]
+
+[ext_resource type="Texture2D" uid="uid://bow6j56sje3y2" path="res://Sprites/WhiteBox.png" id="1_gi5sc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y764l"]
+size = Vector2(2.0059, 2.0059)
+
+[sub_resource type="Animation" id="Animation_tfpmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rpa77"]
+resource_name = "spin"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofew2"]
+_data = {
+"RESET": SubResource("Animation_tfpmq"),
+"spin": SubResource("Animation_rpa77")
+}
+
+[node name="SquareProjectile" type="Sprite2D"]
+self_modulate = Color(1, 0.983333, 0, 1)
+scale = Vector2(33.9, 33.9)
+texture = ExtResource("1_gi5sc")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+position = Vector2(0, 5.6264e-08)
+shape = SubResource("RectangleShape2D_y764l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ofew2")
+}
+autoplay = "spin"
