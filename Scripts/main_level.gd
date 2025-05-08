@@ -4,6 +4,7 @@ extends Node2D
 var _phase01 = preload("res://Scenes/BossPhases/phase_01.tscn")
 var _phase02 = preload("res://Scenes/BossPhases/phase_02.tscn")
 var _phase03 = preload("res://Scenes/BossPhases/phase_03.tscn")
+var _phase04 = preload("res://Scenes/BossPhases/phase_04.tscn")
 
 func StartFight(_body: Node2D) -> void:
 	$PreFight/PreFight.play("Phases/SetupZone")
@@ -23,4 +24,8 @@ func Phase02() -> void:
 
 func Phase03() -> void:
 	var instance = _phase03.instantiate()
+	add_child(instance)
+
+func Phase04() -> void:
+	var instance = _phase04.instantiate()
 	add_child(instance)
